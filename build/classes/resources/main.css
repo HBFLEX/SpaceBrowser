@@ -1,0 +1,32 @@
+/* 
+    Created on : Apr 27, 2023, 1:44:04 PM
+    Author     : HBFL3X
+*/
+
+.root{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #1c0aa3, #f01a65);
+}
+
+#topHeader{
+    -fx-background-color: linear-gradient(from 100% 100% to 100% 100%, #4f074e, #4f074e);
+}
+
+#searchInput{
+    -fx-background-color: #eee;
+    -fx-border-color: #1c0aa3;
+}
+
+#button{
+    -fx-background-color: #e6ecf0;
+    -fx-background-radius: 10;
+}
+
+#button:hover{
+    -fx-background-color: #000;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+}
+
+#navigatorBtn:hover{
+    -background-color: red;
+}

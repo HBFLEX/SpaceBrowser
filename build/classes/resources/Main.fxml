@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="986.0" styleClass="root" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <HBox id="topHeader" prefHeight="54.0" prefWidth="789.0" spacing="1.0" stylesheets="@main.css">
+         <children>
+            <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@browserIcon.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="35.0" prefWidth="280.0" text="Space Browser" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="15.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Teen Light" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="39.0" prefWidth="789.0">
+         <children>
+            <Button id="navigatorBtn" fx:id="goBackBtn" mnemonicParsing="false" onAction="#prevPage" style="-fx-background-color: #000; -fx-cursor: hand;" stylesheets="@main.css">
+               <HBox.margin>
+                  <Insets left="8.0" top="5.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView id="icon" fitHeight="32.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@go_back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="navigatorBtn" fx:id="goForwardBtn" layoutX="18.0" layoutY="15.0" mnemonicParsing="false" onAction="#nextPage" style="-fx-background-color: #000; -fx-cursor: hand;" stylesheets="@main.css">
+               <graphic>
+                  <ImageView id="icon" fitHeight="32.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@go_forward.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="1.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button id="navigatorBtn" fx:id="reloadBtn" layoutX="67.0" layoutY="15.0" mnemonicParsing="false" onAction="#reloadPage" prefHeight="40.0" prefWidth="43.0" style="-fx-background-color: #000; -fx-cursor: hand;" stylesheets="@main.css">
+               <graphic>
+                  <ImageView id="icon" fitHeight="33.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@reload.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="8.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <TextField fx:id="queryInput" onAction="#search" prefHeight="35.0" prefWidth="550.0" promptText="Type in your URL or Search query here...">
+               <HBox.margin>
+                  <Insets left="10.0" top="8.0" />
+               </HBox.margin>
+            </TextField>
+            <Button id="navigatorBtn" fx:id="searchBtn" layoutX="123.0" layoutY="15.0" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="43.0" style="-fx-background-color: #000; -fx-cursor: hand; -fx-background-radius: 20;" stylesheets="@main.css">
+               <graphic>
+                  <ImageView id="icon" fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="8.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="212.0">
+               <children>
+                  <ComboBox fx:id="zoomCombo" onAction="#setZoomLevel" prefHeight="33.0" prefWidth="150.0" promptText="Zoom Level" style="-fx-background-color: #111; -fx-accent: #fff;">
+                     <HBox.margin>
+                        <Insets left="10.0" top="3.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+      <WebView fx:id="webView" prefHeight="785.0" prefWidth="785.0" />
+   </children>
+</VBox>
