@@ -32,6 +32,23 @@
                   <Font name="Teen Light" size="31.0" />
                </font>
             </Label>
+            <Label id="titleBar" fx:id="titleBar" alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="262.0" stylesheets="@main.css">
+               <HBox.margin>
+                  <Insets top="12.0" />
+               </HBox.margin>
+            </Label>
+            <Button id="newWindowBtn" fx:id="openNewWindow" mnemonicParsing="false" onAction="#instanstiateNewWindow" prefHeight="30.0" prefWidth="39.0" stylesheets="@main.css">
+               <HBox.margin>
+                  <Insets left="12.0" top="11.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8_Add_New_128px_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </HBox>
       <HBox prefHeight="39.0" prefWidth="789.0">

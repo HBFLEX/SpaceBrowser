@@ -30,3 +30,21 @@
 #navigatorBtn:hover{
     -background-color: red;
 }
+
+#titleBar{
+    -fx-background-color: #47245c;
+    -fx-text-fill: #fff;
+    -fx-font-weight: 500;
+    -fx-font-size: 14;
+    -fx-allignment: center;
+    -fx-padding: 5;
+}
+
+#newWindowBtn{
+    -fx-background-color: #222;
+}
+
+#newWindowBtn:hover{
+    -fx-background-color: #111;
+    -fx-cursor: hand;
+}
