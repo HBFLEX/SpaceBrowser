@@ -1,10 +1,14 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -49,6 +53,8 @@ public class MainController implements Initializable {
     private ObservableList zoomLevels = 
             FXCollections.observableArrayList("10%", "40%", "60%", "80%", "100%", "120%", "140%", "160%", "180%", "200%");
     
+    String page_not_found_file = getClass().getClassLoader().getResource("resources/page_not_found.html").toExternalForm();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {     
         webEngine = webView.getEngine();
@@ -58,6 +64,11 @@ public class MainController implements Initializable {
         webEngine.getLoadWorker().stateProperty().addListener(new ChangeListener<State>(){
             @Override
             public void changed(ObservableValue<? extends State> ov, State oldState, State newState) {
+                
+                if (newState == State.FAILED){
+                    webEngine.load(page_not_found_file);
+                }
+                
                 if (newState == State.READY){
                     titleBar.setText("Waiting for google.com");
                 }
